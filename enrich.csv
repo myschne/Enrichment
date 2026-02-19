@@ -1,0 +1,8 @@
+First,Mid,Last,Suf,load_date,Address,Address 2,City,State/Province,Zip Code,Employer Name,Occupation,CountryCode,CountryName
+Alex,J,Smith,,2026-02-01,"500 State St",Apt 2,"Ann Arbor",MI,48104,"Blue Owl Analytics","Data Analyst","US","United States"
+Alex,J,Smith,,2026-02-15,"700 Liberty St",,"Ann Arbor",MI,48104,"Blue Owl Analytics","Senior Data Analyst","US","United States"
+Taylor,,Nguyen,,2026-01-20,"999 Updated Ave",,"Detroit",MI,48201,"NewCo","Senior Analyst","US","United States"
+Jordan,,Lee,,2026-02-10,"10 Wacker Dr",Suite 1200,"Chicago",IL,60601,"Windy City Partners","Consultant","US","United States"
+Sam,,ONeil,,2026-02-05,"44 High St",,"Columbus",OH,43215,"Buckeye Labs","Engineer","US","United States"
+Priya,K,Patel,,2026-02-12,"200 Market St",Unit 8,"San Jose",CA,95112,"Silicon Works","Product Analyst","US","United States"
+Chris,M,Johnson,Jr,2026-02-11,"1 Congress Ave",,"Austin",TX,78701,"Lone Star Tech","Manager","US","United States"

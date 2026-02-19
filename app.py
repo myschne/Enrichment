@@ -6,6 +6,7 @@ import re
 from io import BytesIO
 import pandas as pd
 import streamlit as st
+import openpyxl
 
 st.set_page_config(page_title="Spreadsheet Enricher", layout="wide")
 
