@@ -147,6 +147,13 @@ with st.sidebar:
     overwrite = st.checkbox("Overwrite base values (otherwise fill blanks only)", value=False)
     output_format = st.radio("Output format", ["Excel (.xlsx)", "CSV (.csv)"], index=0)
 
+    st.divider()
+    st.header("3) Output file name")
+    output_stem = st.text_input(
+        "Filename (no extension)",
+        value="enriched",
+        help="We’ll add .xlsx or .csv automatically.",
+    )
 if not base_file or not enrich_file:
     st.info("Upload both a base file and an enrichment file to continue.")
     st.stop()
@@ -241,12 +248,15 @@ if run:
     st.dataframe(out_df.head(50), use_container_width=True)
 
     # Downloads
+    safe_stem = re.sub(r'[\\/:*?"<>|]+', "_", (output_stem or "enriched")).strip()
+    safe_stem = safe_stem or "enriched"
+
     if output_format.startswith("Excel"):
         data = to_excel_bytes(out_df)
         st.download_button(
             "Download enriched Excel",
             data=data,
-            file_name="enriched.xlsx",
+            file_name=f"{safe_stem}.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True,
         )
@@ -255,10 +265,11 @@ if run:
         st.download_button(
             "Download enriched CSV",
             data=data,
-            file_name="enriched.csv",
+            file_name=f"{safe_stem}.csv",
             mime="text/csv",
             use_container_width=True,
         )
+
 
     # Basic diagnostics
     st.divider()
